@@ -34,8 +34,7 @@ document.getElementById("post_click").addEventListener("click", (e) => {
 
     let data = new FormData();
     data.append("ps", ps);
-    data.forEach(e => console.log("e: " + e));
-
+    //data.forEach(e => console.log("e: " + e));
     fetch("/voice_recognition?", { method: 'POST', body: data, }).then(response => {
         console.log(response.status);  // => 200
 

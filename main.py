@@ -11,6 +11,7 @@ def index():
     return render_template("index.html")
 
 
+# GETメソッド
 @app.route('/voice_recognition', methods=["GET"])
 def voice_recognition_get():
     state = request.args.get('gs', None)  # ファーストネーム
@@ -18,6 +19,7 @@ def voice_recognition_get():
     return render_template("voice_recognition.html")
 
 
+# POSTメソッド
 @app.route('/voice_recognition', methods=["POST"])
 def voice_recognition_post():
     state = request.form.get('ps', None)  # ファーストネーム
