@@ -1,4 +1,5 @@
 import os
+import asr_streaming_vad as asr
 from flask import Flask, request, render_template, jsonify
 import json  # Python標準のJSONライブラリを読み込んで、データの保存等に使用する
 
@@ -16,7 +17,10 @@ def index():
 def voice_recognition_get():
     state = request.args.get('gs', None)  # ファーストネーム
     print(f'get_state: {state}')
-    return render_template("voice_recognition.html")
+    return asr.main(chunk_size=8000, threshold=45, vad_start=0.3, vad_end=1.0)
+
+    #
+    # return render_template("voice_recognition.html")
 
 
 # POSTメソッド
