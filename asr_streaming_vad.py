@@ -248,6 +248,7 @@ def main(chunk_size=8000, threshold=45, vad_start=0.3, vad_end=1.0):
     recog_result = get_asr_result(vosk_asr)
     print(f"認識結果: {recog_result}")
     print("＜認識終了＞")
+    return recog_result
 
 
 if __name__ == "__main__":
